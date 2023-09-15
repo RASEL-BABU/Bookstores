@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigation } from 'react-router-dom';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const BookDetails = () => {
     const bookDetails=useLoaderData()
+      const navigation = useNavigation()
+
+  if (navigation.state === 'loading') {
+    return <LoadingSpinner></LoadingSpinner>
+  }
     const { image, title, desc, authors, publisher, year, rating, url, price } =
     bookDetails
     const [fold, setFold] = useState(true)
+
+
+  
 
    
     return (
@@ -55,9 +64,9 @@ const BookDetails = () => {
             )}
   
             <div className='flex gap-5 mt-8 items-center'>
-              <a href={url} target='_blank' className='btn'>
+              <Link to='/' target='_blank' className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded'>
                 Buy Now
-              </a>
+              </Link>
               <p className='items-center font-extrabold text-gray-600 '>
                 Price: {price}
               </p>
