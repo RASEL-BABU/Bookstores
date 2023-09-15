@@ -8,7 +8,7 @@ import { Link, NavLink } from 'react-router-dom';
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] =useState(false)
     return (
-        <div className='flex  justify-between items-centerbg-gray-100 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
+        <div className='flex justify-between bg-gray-100 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
             <Link to='/' className='flex items-center justify-between'>
                 {/* logo section */}
                 <div className='inline-flex items-center'>
